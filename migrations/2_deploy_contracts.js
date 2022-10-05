@@ -5,8 +5,12 @@
 
 // Creates an artifact of todolist.json 
 // just so it can understand the smart contract 
-var TodoList = artifacts.require("./TodoList.sol");
+const TodoList = artifacts.require("./TodoList.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(Migrations);
+  deployer.deploy(TodoList);
 };
+
+// interacting with blockchain in an asyncronous manner, you can use promises. 
+// with truffle you can use the async await pattern. await is saying wait for the 
+// todolist to be deployed, when finished store it in the todoList variable
